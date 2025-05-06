@@ -1,0 +1,1055 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100%;
+    display: block;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+/* General Styles for the Menu */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 0.6;
+    text-decoration: none;
+    border: 2px solid darkorange;
+    padding: 5px;
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+    position: relative; /* Ensure dropdown is positioned relative to parent */
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    background-color: #ff8c00;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff8c00;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex; /* Show dropdown on hover */
+}
+
+/* Mobile Menu */
+.mobile-nav {
+    display: none;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1999;
+}
+
+.mobile-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    background-color: #ff8c00;
+}
+
+.mobile-menu .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.hero-content {
+    width: 49%;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.order-button {
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #e67e00;
+}
+
+.hero-image {
+    width: 49%;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Menu Slider */
+.menu-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.menu-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+.menu-slider {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+.menu-card img {
+    width: 200px!important;
+    height: auto!important;
+}
+.menu-item {
+    min-width: 200px;
+    margin: 20px 0px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f8f3e9;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.about-content img {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.about-text {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-left: -50px;
+    z-index: 1;
+}
+
+.about-title {
+    color: #ff8c00;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: #ff8c00;
+    color: #fff;
+    border-color: #ff8c00;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.mission-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Menu Categories Section */
+.menu-categories {
+    padding: 40px 20px;
+    background-color: #f8f3e9;
+    text-align: center;
+}
+
+.menu-categories h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.category-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.category-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Menu Card Section */
+.menu-card {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu-title {
+    color: #ff8c00;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.menu-card h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.menu-item img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.menu-details {
+    flex: 1;
+    text-align: left;
+}
+
+.menu-details h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.menu-details p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.menu-price {
+    font-size: 1.5rem;
+    color: #ff8c00;
+}
+
+/* Open Hours Section */
+.open-hours {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.open-hours-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hours-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.hours-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.hours {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hours p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-info a:hover {
+    background-color: #ff8c00;
+    color: #fff;
+    border-color: #ff8c00;
+}
+
+.open-hour-title {
+    flex: 1;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.open-hour-title h2 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.open-hour-title p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.testimonials-title {
+    color: #ff8c00;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.testimonials h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+}
+
+.testimonial img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.testimonial-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-content .role {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.testimonial-content .quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Our Chefs Section */
+.our-chefs {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.chef-banner {
+    background-image: url('../images/chef-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.chef-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    color: #ff8c00;
+}
+
+.breadcrumb a {
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+.chef-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: -100px;
+}
+
+.chef-card {
+    background-color: #f8f3e9;
+    width: 21%;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.chef-card:hover {
+    transform: translateY(-10px);
+}
+
+.chef-card img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.chef-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.chef-card p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-contacts, .footer-form {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.footer-contacts h4, .footer-form h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff8c00;
+}
+
+.footer-contacts p, .footer-form p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.footer-contacts a {
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-form input, .footer-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.footer-form button {
+    padding: 10px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-form button:hover {
+    background-color: #e67e00;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-links li a {
+    color: #ff8c00;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Обеспечение кроссбраузерности */
+button, input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input, textarea, select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #ff8c00;
+    box-shadow: 0 0 3px rgba(255, 140, 0, 0.5);
+}
+/* Advantages Section */
+.advantages-section {
+    padding: 50px 20px;
+    background-color: #f8f3e9;
+    text-align: center;
+}
+
+.advantages-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.advantages-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.advantage-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    transition: transform 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-10px);
+}
+
+.advantage-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ff8c00;
+}
+
+.advantage-item p {
+    font-size: 1rem;
+    color: #666;
+}
+/* Contact Info Section */
+.contact-info-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f3e9;
+}
+
+.contact-info-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Reservation Form Section */
+.reservation-form-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.reservation-form-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.reservation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form label {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: left;
+}
+
+.reservation-form input, .reservation-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f8f3e9;
+    color: #333;
+    font-size: 1rem;
+}
+
+.reservation-form button {
+    padding: 15px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #e67e00;
+}
+
+/* Map Section */
+.map-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.map-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+}
+/* Reservation Section */
+.reservation-section {
+    padding: 50px 20px;
+    background-color: #f8f3e9;
+}
+
+.reservation-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation-form-column {
+    flex: 1;
+    max-width: 45%;
+    padding-right: 20px;
+}
+
+.reservation-image-column {
+    flex: 1;
+    max-width: 45%;
+}
+
+.reservation-image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.reservation-form label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.reservation-form input, .reservation-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+}
+
+.reservation-form button {
+    padding: 15px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #e67e00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .reservation-section .container {
+        flex-direction: column;
+    }
+    .hero-content, .hero-image,
+    .about-content img {
+        width: 100%;
+    }
+    .about-content {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .about-text {
+        margin-left: 0;
+    }
+    .reservation-form-column, .reservation-image-column {
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+
+    .reservation-form-column {
+        margin-bottom: 20px;
+    }
+    .hero-section {
+        flex-wrap: wrap;
+    }
+}
+ /* Popup Modal */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .popup h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button:hover {
+            background-color: #e67e00;
+        }

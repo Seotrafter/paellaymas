@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paella y Más - Sabores Auténticos en Chile</title>
+  <meta name="description" content="Bienvenidos a Paella y Más, un espacio donde la tradición mediterránea se fusiona con la pasión chilena para ofrecerte una experiencia culinaria inolvidable.">
+  <meta name="keywords" content="restaurante, paella, cocina mediterránea, gastronomía chilena, desayuno, almuerzo, cena, fusión, sabores auténticos">
+  <meta property="og:title" content="Paella y Más - Sabores Auténticos en Chile">
+  <meta property="og:description" content="Descubre en Paella y Más la fusión de recetas ancestrales y modernidad en cada plato, celebrando la diversidad de sabores en el corazón de Chile.">
+  <meta property="og:image" content="https://paellaymas.com/images/og-image.jpg">
+  <meta property="og:url" content="https://paellaymas.com">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Popup Modal */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 90%;
+    }
+
+    .popup h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .popup button {
+        padding: 10px 20px;
+        background-color: #ff8c00;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .popup button:hover {
+        background-color: #e67e00;
+    }
+</style>
+</head>
+<body>
+    <header>
+  <div class="container">
+    <div class="logo">
+      <a href="./">
+        Paella y Más
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="./">Inicio</a></li>
+        <li><a href="about/">Sobre Nosotros</a></li>
+        <li><a href="contacts/contacts.html">Contacto</a></li>
+        <li><a href="/#reservation">Reservar</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-nav">
+      <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    </div>
+  </div>
+</header>
+
+<div id="mobileMenu" class="mobile-menu">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+  <a href="./">Inicio</a>
+  <a href="about/">Sobre Nosotros</a>
+  <a href="contacts/contacts.html">Contacto</a>
+  <a href="/#reservation">Reservar</a>
+</div>
+
+
+<header class="hero-section">
+  <div class="hero-content">
+    <h1>Tradición y Sabor: Cada Bocado Es Una Celebración</h1>
+    <p>Disfruta de la fusión mediterránea en el corazón de Chile. Vive una experiencia gastronómica única en Paella y Más.</p>
+    <a href="#reservation" class="order-button">ORDENA AHORA</a>
+  </div>
+  <img src="images/hero.png" alt="Platos llenos de sabor en Paella y Más" class="hero-image">
+</header>
+
+<section class="menu-section">
+  <h2>Nuestros Platos Deliciosos</h2>
+  <div class="tabs">
+    <button class="tab active" data-category="all">Todos</button>
+    <button class="tab" data-category="desayuno">Desayuno</button>
+    <button class="tab" data-category="almuerzo">Almuerzo</button>
+    <button class="tab" data-category="cena">Cena</button>
+  </div>
+  <div class="menu-slider">
+    <div class="menu-item" data-category="all desayuno">
+      <img src="images/bruno-scribble.jpg" alt="Bruno Scribble">
+      <h3>Bruno Scribble</h3>
+      <p>Un sabor inolvidable.</p>
+    </div>
+    <div class="menu-item" data-category="all cena">
+      <img src="images/oysters-dozen.jpg" alt="Una Docena de Ostras">
+      <h3>Una Docena de Ostras</h3>
+      <p>Un sabor inolvidable.</p>
+    </div>
+    <div class="menu-item" data-category="all almuerzo">
+      <img src="images/chicha-morada.jpg" alt="Chicha Morada">
+      <h3>Chicha Morada</h3>
+      <p>Un sabor inolvidable.</p>
+    </div>
+    <div class="menu-item" data-category="all cena">
+      <img src="images/roasted-chicken.jpg" alt="Pollo Asado">
+      <h3>Pollo Asado</h3>
+      <p>Un sabor inolvidable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-content">
+    <img src="images/about-dish.jpg" alt="Deliciosa Comida">
+    <div class="about-text">
+      <h3 class="about-title">SOBRE EL RESTAURANTE</h3>
+      <h2>El Arte Detrás del Sabor</h2>
+      <p>Paella y Más, ubicado en el corazón de Chile, es un refugio culinario donde se fusiona la tradición mediterránea con la pasión local. Fundado por una familia amante de la buena cocina, nuestro restaurante rinde homenaje a recetas ancestrales mientras abraza la innovación.</p>
+      <br>
+      <p>Para nosotros, cocinar es un arte. Cada plato se elabora con ingredientes frescos y locales, y nuestros chefs combinan técnicas tradicionales con un toque creativo para ofrecerte una experiencia gastronómica inolvidable.</p>
+      <br>
+      <p>El ambiente de Paella y Más ha sido cuidadosamente diseñado para reflejar nuestra filosofía: un espacio elegante y acogedor que fusiona lo clásico y lo contemporáneo, ideal para disfrutar de momentos únicos con un servicio atento.</p>
+      <a href="about/" class="about-button">CONOCE MÁS</a>
+    </div>
+  </div>
+</section>
+
+<section class="mission-section">
+  <div class="mission-content">
+    <h2>Nuestra Misión</h2>
+    <p>En Paella y Más, nos dedicamos a deleitar a nuestra comunidad con platos auténticos y llenos de sabor. Nos comprometemos a usar ingredientes frescos para crear experiencias culinarias inolvidables en cada visita. Nuestros chefs trabajan con pasión para que cada plato sea una perfecta travesía por los mejores sabores del mundo.</p>
+  </div>
+</section>
+
+<div id="reservation"></div>
+<section class="reservation-section">
+  <div class="container">
+    <div class="reservation-form-column">
+      <h2>Reserva tu Mesa</h2>
+      <form action="#" method="post" class="reservation-form">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+        <label for="phone">Número de Teléfono</label>
+        <input type="tel" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+        <label for="date">Fecha de Reserva</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time">Hora de Reserva</label>
+        <input type="time" id="time" name="time" required>
+        <label for="guests">Número de Invitados</label>
+        <input type="number" id="guests" name="guests" min="1" max="20" placeholder="Ingresa el número de invitados" required>
+        <label for="message">Solicitudes Adicionales</label>
+        <textarea id="message" name="message" rows="4" placeholder="Escribe aquí tus solicitudes adicionales"></textarea>
+        <button type="submit">Reservar</button>
+      </form>
+    </div>
+    <div class="reservation-image-column">
+      <img src="images/reservation-image.jpg" alt="Mesa en Paella y Más">
+    </div>
+  </div>
+</section>
+<section class="open-hours">
+  <div class="open-hours-content">
+    <div class="hours-section">
+      <h4>Lunes - Martes</h4>
+      <div class="hours">
+        <p>10:00 AM</p>
+        <p>8:00 PM</p>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+5622345678">+56 2 2345678</a>
+      </div>
+    </div>
+    <div class="open-hour-title">
+      <h2>ABIERTO</h2>
+      <h2>HORAS</h2>
+      <p>Visítanos: Av. Providencia 1234, Providencia, Santiago, Chile</p>
+      <p>Reserva de Mesa: +56 2 2345678</p>
+    </div>
+    <div class="hours-section">
+      <h4>Viernes - Domingo</h4>
+      <div class="hours">
+        <p>12:00 PM</p>
+        <p>11:00 PM</p>
+      </div>
+      <div class="contact-info">
+        <a href="mailto:info@paellaymas.com">info@paellaymas.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h3 class="testimonials-title">TESTIMONIOS</h3>
+  <h2>¿Qué Dicen Nuestros Clientes?</h2>
+  <div class="testimonials-container">
+    <div class="testimonial">
+      <img src="images/customer1.jpg" alt="Carlos García">
+      <div class="testimonial-content">
+        <h4>Carlos García</h4>
+        <p class="role">Ingeniero de Software</p>
+        <p class="quote">"La atención y los sabores en Paella y Más fueron inigualables. Todo estaba fresco y lleno de sabor. ¡Lo recomiendo sin dudar!"</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer2.jpg" alt="Lucía Fernández">
+      <div class="testimonial-content">
+        <h4>Lucía Fernández</h4>
+        <p class="role">Diseñadora Gráfica</p>
+        <p class="quote">"Los platos, el servicio y el ambiente fueron excepcionales. Paella y Más representa lo mejor de la cocina mediterránea con un toque moderno."</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer3.jpg" alt="Javier Martínez">
+      <div class="testimonial-content">
+        <h4>Javier Martínez</h4>
+        <p class="role">Arquitecto</p>
+        <p class="quote">"En Santiago es difícil encontrar un restaurante tan destacado. Recomiendo a todos probar estos sabores auténticos."</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer4.jpg" alt="Sofía López">
+      <div class="testimonial-content">
+        <h4>Sofía López</h4>
+        <p class="role">Profesora</p>
+        <p class="quote">"Los platos de Paella y Más me transportaron a mis recuerdos de infancia. Cada bocado evocaba el sabor de las comidas caseras."</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer5.jpg" alt="Miguel Rodríguez">
+      <div class="testimonial-content">
+        <h4>Miguel Rodríguez</h4>
+        <p class="role">Empresario</p>
+        <p class="quote">"El restaurante ofrece lo mejor de la gastronomía mediterránea en la ciudad. La presentación y los sabores son de primera. Definitivamente regresaré."</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer6.jpg" alt="Isabel Sánchez">
+      <div class="testimonial-content">
+        <h4>Isabel Sánchez</h4>
+        <p class="role">Abogada</p>
+        <p class="quote">"El personal amable, el servicio rápido y los platos exquisitos... En Paella y Más todo es perfecto."</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer7.jpg" alt="Diego Pérez">
+      <div class="testimonial-content">
+        <h4>Diego Pérez</h4>
+        <p class="role">Médico</p>
+        <p class="quote">"La calidad y frescura de los platos en Paella y Más son realmente sorprendentes. Lo recomiendo a todos sin reservas."</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="images/customer8.jpg" alt="Ana Gómez">
+      <div class="testimonial-content">
+        <h4>Ana Gómez</h4>
+        <p class="role">Especialista en Marketing</p>
+        <p class="quote">"Pasé una velada maravillosa con mis amigos. La comida y el ambiente fueron excepcionales. ¡Sin duda volveremos!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="our-chefs">
+  <div class="chef-banner">
+    <h2>NUESTROS CHEFS</h2>
+    <nav class="breadcrumb">
+      <a href="/">INICIO</a> &gt; <span>NUESTROS CHEFS</span>
+    </nav>
+  </div>
+  <div class="chef-container">
+    <div class="chef-card">
+      <img src="images/chef1.jpg" alt="Chef 1">
+      <h3>Alejandro García</h3>
+      <p>Chef Principal</p>
+    </div>
+    <div class="chef-card">
+      <img src="images/chef2.jpg" alt="Chef 2">
+      <h3>Carmen Martínez</h3>
+      <p>Chef de Pastelería</p>
+    </div>
+    <div class="chef-card">
+      <img src="images/chef3.jpg" alt="Chef 3">
+      <h3>José López</h3>
+      <p>Sous Chef</p>
+    </div>
+    <div class="chef-card">
+      <img src="images/chef4.jpg" alt="Chef 4">
+      <h3>Ana Rodríguez</h3>
+      <p>Jefa de Sección</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-contacts">
+    <h4>Contáctanos</h4>
+    <p>Dirección: Av. Providencia 1234, Providencia, Santiago, Chile</p>
+    <p>Teléfono: <a href="tel:+5622345678">+56 2 2345678</a></p>
+    <p>Email: <a href="mailto:info@paellaymas.com">info@paellaymas.com</a></p>
+  </div>
+  <div class="footer-form">
+    <h4>Comentarios</h4>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Tu Nombre" required>
+      <input type="email" name="email" placeholder="Tu Correo" required>
+      <textarea name="message" rows="4" placeholder="Tu Mensaje" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="privacy.html">Política de Privacidad</a></li>
+    <li><a href="terms.html">Términos de Uso</a></li>
+    <li><a href="cookie.html">Política de Cookies</a></li>
+  </ul>
+  <p>Todos los derechos reservados © Paella y Más 2024</p>
+</footer>
+
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup">
+    <h2>¡Gracias!</h2>
+    <p>¡Nos pondremos en contacto contigo pronto!</p>
+    <button onclick="closePopup()">Aceptar</button>
+  </div>
+</div>
+
+
+<script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            if (menu.style.width === "100%") {
+                menu.style.width = "0";
+            } else {
+                menu.style.width = "100%";
+            }
+        }
+
+        // Show Popup
+        function showPopup() {
+            document.getElementById("popupOverlay").style.display = "flex";
+        }
+
+        // Close Popup
+        function closePopup() {
+            document.getElementById("popupOverlay").style.display = "none";
+        }
+
+        // Handle Form Submission
+        document.querySelectorAll('form').forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                showPopup();
+                form.reset(); // Reset form fields
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
